@@ -12,8 +12,8 @@ python3 run_model.py -i unlabelled_sample.txt -m model.pkl -o output.txt
 
 """
 
-# author: Chao (Cico) Zhang
-# date: 31 Mar 2017
+# author: Akhil Chandran
+# date: 22 May 2023
 
 import argparse
 import sys
@@ -22,23 +22,8 @@ import pickle
 # Start your coding
 
 import pandas as pd
-import numpy as np
 import csv
-from numpy import mean, std
 import pandas as pd
-from sklearn.model_selection import train_test_split, GridSearchCV, cross_val_score, cross_validate, KFold
-from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, confusion_matrix, RocCurveDisplay, roc_curve
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_classification
-import math
-from sklearn.feature_selection import RFE, RFECV
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import RepeatedStratifiedKFold, StratifiedKFold
-import matplotlib.pyplot as plt
-
-# import the library you need here
 
 # End your coding
 
@@ -68,11 +53,6 @@ def main():
         sys.exit('Output is not designated!')
 
     # Start your coding
-
-    # suggested steps
-    # Step 1: load the model from the model file
-    # Step 2: apply the model to the input file to do the prediction
-    # Step 3: write the prediction into the desinated output file
     
     # Data Reconfigure.
     #
