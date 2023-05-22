@@ -24,6 +24,11 @@ svc_params = {'C': [0.001, 0.1, 1, 10], 'gamma': [0.1, 1, 10, 100], 'kernel': ['
 rf_params = {'n_estimators': [50, 100, 250, 500], 'max_depth': [5, 10, 30], 'min_samples_split': [2, 5, 10], 'max_features': [53, 100, 500, 1000]}    # 53 bcs it is the sqrt of the length of the dataset. It was adviced in a paper that the sqrt of the size of the dataset will be good value for max_features choice.
 
 
+"""
+Run this file with the following command: python3 CATS_code_extras.py Train_call.txt Train_clinical.txt
+"""
+
+
 def get_filename():
     try:
         f1 = sys.argv[1]
@@ -69,7 +74,7 @@ def nested_cv_param_selection(X_train, y_train):
     outer_cv = KFold(n_splits=10, shuffle=True)
     inner_cv = KFold(n_splits=5, shuffle=True)
     
-    # For SVC
+    # For SVC.
     #
     svc_grid = GridSearchCV(estimator=SVC(), param_grid=svc_params, cv=inner_cv)
     svc_grid.fit(X_train, y_train)
@@ -79,7 +84,7 @@ def nested_cv_param_selection(X_train, y_train):
     print("SVC best params:", svc_best_params)
     print("SVC: Mean accuracy=%.3f, std=%.3f" % (svc_scores.mean(), svc_scores.std()))
 
-    # For RF
+    # For RF.
     #
     rf_grid = GridSearchCV(estimator=RandomForestClassifier(), param_grid=rf_params, cv=inner_cv)
     rf_grid.fit(X_train, y_train)
