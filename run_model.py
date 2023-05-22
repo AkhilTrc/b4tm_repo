@@ -62,7 +62,7 @@ def main():
     unlabelled_set = unlabelled_set.reset_index()
     unlabelled_set = unlabelled_set.set_index('index')
 
-    # Loading Model
+    # Loading Model.
     #
     RF_model = pickle.load(open(args.model_file, 'rb'))
 
