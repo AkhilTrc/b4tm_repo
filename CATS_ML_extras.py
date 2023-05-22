@@ -45,8 +45,7 @@ def proc_and_split(data_filename, label_filename):
     labels = pd.read_csv(label_filename, sep='\t')
 
     dataset_transposed = input_data.T
-    trainset = dataset_transposed.drop(['Start', 'End', 'Nclone', 'Chromosome'])
-    dataset_transposed = dataset_transposed.reset_index()
+    dataset_transposed = dataset_transposed.drop(['Start', 'End', 'Nclone', 'Chromosome'])
     dataset_transposed = dataset_transposed.reset_index()
 
     trainset = pd.concat([dataset_transposed, labels], axis=1)
