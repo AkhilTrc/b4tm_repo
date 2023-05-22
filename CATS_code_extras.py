@@ -25,7 +25,10 @@ rf_params = {'n_estimators': [50, 100, 250, 500], 'max_depth': [5, 10, 30], 'min
 
 
 """
-Run this file with the following command: python3 CATS_code_extras.py Train_call.txt Train_clinical.txt
+Run this file with the following command: 
+
+python3 CATS_code_extras.py Train_call.txt Train_clinical.txt
+
 """
 
 
